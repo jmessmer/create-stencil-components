@@ -1,6 +1,6 @@
 {
   "name": "create-stencil-components",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Create a stencil component library project using Nx, TypeScript, and SASS",
   "license": "MIT",
   "author": "Jason Messmer <mezlight@gmail.com>",
