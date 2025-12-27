@@ -1,4 +1,4 @@
-# create-stencil-components
+# create-stencil-components <a href="https://npmjs.com/package/create-stencil-components"><img src="https://img.shields.io/npm/v/create-stencil-components" alt="npm package"></a>
 
 > Create a stencil component library project using Nx, TypeScript, and SASS.
 
