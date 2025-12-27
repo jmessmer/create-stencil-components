@@ -1,0 +1,43 @@
+{
+  "name": "@{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-vue",
+  "version": "0.0.0",
+  "description": "Vue specific wrappers for @{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-core",
+  "keywords": [
+    "stencil",
+    "stenciljs",
+    "vue"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf --glob dist src/components/generated",
+    "build": "tsc",
+    "format": "prettier src/**/*.{ts,tsx} --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore",
+    "format:fix": "prettier src/**/*.{ts,tsx} --write --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore",
+    "lint:eslint": "eslint src --config ../../eslint.config.mjs",
+    "lint:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore",
+    "lint:fix:eslint": "eslint src --config ../../eslint.config.mjs --fix",
+    "lint:fix:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore --fix",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "dependencies": {
+    "tslib": "2.8.1"
+  },
+  "peerDependencies": {
+    "@stencil/vue-output-target": "0.11.8",
+    "@{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-core": "*"
+  },
+  "license": "MIT",
+  "sideEffects": false
+}
