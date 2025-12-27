@@ -1,0 +1,144 @@
+{
+  "name": "components-{{PROJECT_NAME_KEBAB}}-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"]
+  },
+  "targets": {
+    "clean": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        {
+          "externalDependencies": ["rimraf"]
+        }
+      ],
+      "options": {
+        "script": "clean",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "build": {
+      "cache": false,
+      "dependsOn": [
+        "^lint"
+      ],
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "build",
+        "cwd": "{projectRoot}"
+      },
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "format": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "options": {
+        "script": "format",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "format:fix": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "options": {
+        "script": "format:fix",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "generate": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "generate",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "lint": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npm run lint:eslint", "npm run lint:stylelint"],
+        "cwd": "{projectRoot}",
+        "parallel": true
+      }
+    },
+    "lint:fix": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npm run lint:eslint:fix", "npm run lint:stylelint:fix"],
+        "cwd": "{projectRoot}",
+        "parallel": true
+      }
+    },
+    "server:dev": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "server:dev",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "test",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test:e2e": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "test:e2e",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test:watch": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["@stencil/core"]
+        }
+      ],
+      "options": {
+        "script": "test:watch",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

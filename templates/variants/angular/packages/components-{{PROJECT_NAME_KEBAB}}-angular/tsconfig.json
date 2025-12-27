@@ -1,0 +1,41 @@
+{
+    "angularCompilerOptions": {
+        "compilationMode": "partial",
+        "enableI18nLegacyMessageId": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    },
+    "buildOnSave": false,
+    "compileOnSave": false,
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "lib": [
+            "dom",
+            "es2022"
+        ],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "strict": true,
+        "sourceMap": false,
+        "target": "es2022"
+    },
+    "files": [
+        "src/index.ts",
+        "standalone/src/index.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}

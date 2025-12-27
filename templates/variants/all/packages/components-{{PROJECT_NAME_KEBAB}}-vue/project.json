@@ -1,0 +1,92 @@
+{
+  "name": "components-{{PROJECT_NAME_KEBAB}}-vue",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"]
+  },
+  "targets": {
+    "clean": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        {
+          "externalDependencies": ["rimraf"]
+        }
+      ],
+      "options": {
+        "script": "clean",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "build": {
+      "cache": false,
+      "dependsOn": [
+        {
+          "projects": ["components-{{PROJECT_NAME_KEBAB}}-core"],
+          "target": "build"
+        },
+        "^lint"
+      ],
+      "executor": "nx:run-script",
+      "inputs": [
+        "default",
+        {
+          "externalDependencies": ["typescript"]
+        }
+      ],
+      "options": {
+        "script": "build",
+        "cwd": "{projectRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/src/components/generated"
+      ]
+    },
+    "format": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "options": {
+        "script": "format",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "format:fix": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "options": {
+        "script": "format:fix",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "lint": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npm run lint:eslint", "npm run lint:stylelint"],
+        "cwd": "{projectRoot}",
+        "parallel": true
+      }
+    },
+    "lint:fix": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npm run lint:eslint:fix", "npm run lint:stylelint:fix"],
+        "cwd": "{projectRoot}",
+        "parallel": true
+      }
+    },
+    "test": {
+      "cache": false,
+      "executor": "nx:run-script",
+      "inputs": [
+        "default"
+      ],
+      "options": {
+        "script": "test",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

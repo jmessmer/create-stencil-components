@@ -1,0 +1,27 @@
+{
+  "name": "@{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-angular",
+  "version": "0.0.0",
+  "description": "Angular specific wrappers for @{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-core",
+  "keywords": [
+    "angular",
+    "stencil",
+    "stenciljs"
+  ],
+  "scripts": {
+    "clean": "rimraf --glob dist src/directives/generated standalone/src/directives/generated",
+    "build": "ng-packagr -p ng-package.json -c tsconfig.json"
+  },
+  "dependencies": {
+    "tslib": "2.8.1"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=19",
+    "@angular/core": ">=19",
+    "@{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-core": "*",
+    "rxjs": ">=7.8.2"
+  },
+  "devDependencies": {
+    "ng-packagr": "21.0.1"
+  },
+  "license": "MIT"
+}

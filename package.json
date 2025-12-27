@@ -1,0 +1,60 @@
+{
+  "name": "create-stencil-components",
+  "version": "0.0.0",
+  "description": "Create a stencil component library project using Nx, TypeScript, and SASS",
+  "license": "MIT",
+  "author": "Jason Messmer <mezlight@gmail.com>",
+  "keywords": [
+    "create",
+    "scaffold",
+    "cli",
+    "generator",
+    "stencil",
+    "stenciljs",
+    "web components"
+  ],
+  "bin": {
+    "create-stencil-components": "dist/index.mjs"
+  },
+  "main": "./dist/index.mjs",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run build:tsdown && npm run build:templates",
+    "build:tsc": "tsc",
+    "build:tsdown": "tsdown",
+    "build:templates": "node scripts/copy-templates.js",
+    "dev:tsc": "tsc --watch",
+    "dev:tsdown": "tsdown --watch",
+    "prepublishOnly": "npm run build",
+    "prepare": "node .husky/install.mjs"
+  },
+  "dependencies": {
+    "@clack/prompts": "0.11.0",
+    "commander": "14.0.2",
+    "fs-extra": "11.3.2",
+    "picocolors": "1.1.1",
+    "unique-names-generator": "4.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.2.0",
+    "@commitlint/config-conventional": "20.2.0",
+    "@types/fs-extra": "11.0.4",
+    "@types/node": "24.10.1",
+    "@types/prompts": "2.4.9",
+    "rimraf": "6.1.2",
+    "tsdown": "0.18.3",
+    "typescript": "5.9.3"
+  },
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "volta": {
+    "node": "25.2.1"
+  }
+}

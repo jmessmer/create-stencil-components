@@ -1,0 +1,36 @@
+{
+  "extends": "./node_modules/nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+  "release": {
+    "changelog": {
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false,
+          "applyUsernameToAuthors": false,
+          "commitReferences": false,
+          "versionTitleDate": false
+        }
+      },
+      "workspaceChangelog": false
+    },
+    "git": {
+      "commit": false,
+      "tag": false
+    },
+    "groups": {
+      "components": {
+        "projects": ["packages/*"],
+        "projectsRelationship": "fixed"
+      }
+    },
+    "version": {
+      "conventionalCommits": false,
+      "preVersionCommand": "npx nx run-many -t clean,build",
+      "versionPrefix": ""
+    }
+  },
+  "tui": {
+    "enabled": true
+  }
+}
