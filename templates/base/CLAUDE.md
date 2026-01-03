@@ -1,5 +1,5 @@
 
-Strictly follow the rules in ./AGENTS.md
+@AGENTS.md
 
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->
