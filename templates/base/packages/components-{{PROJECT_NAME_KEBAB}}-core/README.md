@@ -2,7 +2,7 @@
 
 ## Overview
 
-A framework-agnostic collection of  [web components](https://www.webcomponents.org/introduction) built for maximum compatibility. These components integrate seamlessly with popular libraries like React, Angular, and Vue, or can function entirely on their own using standard browser JavaScript.
+A framework-agnostic collection of [web components](https://www.webcomponents.org/introduction) built for maximum compatibility. These components integrate seamlessly with popular libraries like React, Angular, and Vue, or can function entirely on their own using standard browser JavaScript.
 
 ## Tasks
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Vue specific wrappers for the @{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-vue package.
+Vue specific wrappers for the @{{ORGANIZATION_NAME}}/components-{{PROJECT_NAME_KEBAB}}-core package.
 
 ## Tasks
 
