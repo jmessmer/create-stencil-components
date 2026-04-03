@@ -23,12 +23,12 @@
   "scripts": {
     "clean": "rimraf --glob dist src/components/generated",
     "build": "tsc",
-    "format": "prettier src/**/*.{ts,tsx} --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore",
-    "format:fix": "prettier src/**/*.{ts,tsx} --write --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore",
+    "format": "prettier src/**/*.{ts,tsx} --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
+    "format:fix": "prettier src/**/*.{ts,tsx} --write --check --config ../../prettier.config.mjs --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
     "lint:eslint": "eslint src --config ../../eslint.config.mjs",
-    "lint:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore",
+    "lint:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore --allow-empty-input",
     "lint:fix:eslint": "eslint src --config ../../eslint.config.mjs --fix",
-    "lint:fix:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore --fix",
+    "lint:fix:stylelint": "stylelint src/**/*.{css,scss} --config ../../stylelint.config.mjs --ignore-path ../../.stylelintignore --fix --allow-empty-input",
     "test": "echo 'No tests specified' && exit 0"
   },
   "dependencies": {
