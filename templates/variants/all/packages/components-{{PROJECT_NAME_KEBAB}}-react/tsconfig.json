@@ -24,7 +24,11 @@
         "removeComments": false,
         "rootDir": "src",
         "sourceMap": false,
-        "target": "es2022"
+        "target": "es2022",
+        "types": [
+            "node",
+            "react"
+        ]
     },
     "include": [
         "src"
